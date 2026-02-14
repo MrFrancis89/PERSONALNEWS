@@ -1,0 +1,130 @@
+:root {
+    --bg-color: #000000;
+    --card-bg: #1C1C1E;
+    --text-primary: #FFFFFF;
+    --text-secondary: #8E8E93;
+    --accent: #0A84FF;
+    --separator: #38383A;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    color: var(--text-primary);
+    /* Importante para o iPhone X: */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(28, 28, 30, 0.85);
+    backdrop-filter: blur(20px); /* Efeito vidro do iOS */
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 0.5px solid var(--separator);
+    padding: 10px 20px;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.date {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+h1 {
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+main {
+    padding: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 14px; /* Raio padrão iOS */
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.card-header {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.5px solid var(--separator);
+}
+
+.avatar {
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.channel-info h2 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.status {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.video-frame {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000;
+    position: relative;
+}
+
+.video-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.summary {
+    padding: 16px;
+}
+
+.summary h3 {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+}
+
+.summary p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+    color: #EBEBF5;
+    /* Limita a 3 linhas */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
